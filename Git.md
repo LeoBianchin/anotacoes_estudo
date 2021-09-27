@@ -2,57 +2,90 @@
 
 ## Configurar o git
 
+Inicia o repositório na pasta atual
+>git init 
+
+Configurar User name e Email
+
 >git config --global user.email {email}
+
 >git config --global user.name {name}
 
->git init //Inicia o repositório na pasta atual
+## Committing
 
->git add <arquivo> //Adiciona um arquivo específico para commit
->git add . //Adiciona todos os arquivos alterados/não rastreados
+Adiciona um arquivo específico para commit
+>git add <arquivo> 
 
->git commit -m "<mensagem>" //Faz o commit das alterações dos arquivos selecionados
+Adiciona todos os arquivos alterados/não rastreados
+>git add . 
 
->git commit -a //Faz o commit de todos os arquivos alterados/que não foram adicionados ao controle de versão
+Faz o commit das alterações dos arquivos selecionados 
+>git commit -m "<mensagem>" 
+
+Faz o commit de todos os arquivos alterados/que não foram adicionados ao controle de versão
+>git commit -a 
 
 ## LOG
 
->git log //Lista os commits realizados
->git log -p //Detalha o log de alterações e quais alterações realizadas
->git log -p -n // n: número. Detalha a quantidade de logs
+//Lista os commits realizados
+>git log 
 
->git log --pretty=oneline // Resumo das alterações
->git log --pretty=format: "%h - %an, %ar - % s" // Resumo das alterações formatado
+//Detalha o log de alterações e quais alterações realizadas
+>git log -p 
 
->git log --since=N.days //Busca o log desde "N" dias ou weeks etc
+
+>git log -p -n (n: número. Detalha a quantidade de logs)
+
+Resumo das alterações
+>git log --pretty=oneline 
+
+Resumo das alterações formatado
+>git log --pretty=format: "%h - %an, %ar - % s" 
+
+Busca o log desde "N" dias ou weeks etc
+>git log --since=N.days 
 
 ## ignorar arquivos
 
-criar arquivo de texto ".gitignore" e adicione os arquivos ou diretórios por linha
+Criar arquivo de texto ".gitignore" e adicione os arquivos ou diretórios por linha
 
 ## Voltar versões do GIT
 
->git log // para listar os commits em ordem descrescente
+Listar os commits em ordem descrescente
+>git log 
+
 >git checkout <Hash commit>
 
->git reset HEAD~N // Volta uma quantidade de commits sendo 'N' a quantidade.
+Volta uma quantidade de commits sendo 'N' a quantidade.
+>git reset HEAD~N 
 
->git reset HEAD~N --soft // remove o commit mas deixa os arquivos com alterações
->git reset HEAD~N --hard // remove o commit e remove os arquivos com alterações !ATENÇÃO!
+Remove o commit mas deixa os arquivos com alterações
+>git reset HEAD~N --soft 
+
+Remove o commit e remove os arquivos com alterações !ATENÇÃO!
+>git reset HEAD~N --hard
 
 ## BRANCHES
 
->git branch // Exibe o branch atual e lista os branches existentes
->git branch -a // Exibe os branches locais E remotos
+Exibe o branch atual e lista os branches existentes
+>git branch 
 
->git checkout -b <nome do branch> // Cria e seleciona o novo branch
+Exibe os branches locais E remotos
+>git branch -a 
 
->git checkout <branch> // Muda para o branch informado
+Cria e seleciona o novo branch
+>git checkout -b <nome do branch> 
+
+Muda para o branch informado
+>git checkout <branch> 
 
 ## MERGE
 
->git merge <nome do branch> // puxa as alterações do branch informado criando um commit
+Puxa as alterações do branch informado criando um commit
+>git merge <nome do branch> 
 
->git rebase <nome do branch> // puxa as alterações pro branch atual sem criar o commit
+Puxa as alterações pro branch atual sem criar o commit
+>git rebase <nome do branch> 
 
 ## Gerar chave pública pro Github
 
@@ -64,28 +97,39 @@ criar arquivo de texto ".gitignore" e adicione os arquivos ou diretórios por li
 
 ## Push para repositório remoto
 
->git push origin <branch> // Faz o upload do branch para o github
+Faz o upload do branch para o github
+>git push origin <branch> 
 
 ## Clonar repositório
 
->git clone <url ou ssh do repositório> // faz o 'clone' do repositório remoto dentro da pasta selecioada
+Colna o repositório remoto dentro da pasta selecioada
+>git clone <url ou ssh do repositório> 
 
->git checkout -b <nome do branch> origin/<nome do branch remoto> // cria um novo branch baseado no remoto
+Cria um novo branch baseado no remoto
+>git checkout -b <nome do branch> origin/<nome do branch remoto> 
 
->git pull // Sincroniza o repositório local com o remoto
+Sincroniza o repositório local com o remoto
+>git pull 
 
->git pull origin <branch> // Atualiza os arquivos locais com os do repositório
+Atualiza os arquivos locais com os do repositório
+>git pull origin <branch> 
 
 ## Tags : Marcadores, servem como release do projeto. A cada nova versão pode gerar uma nova tag.
 
->git tag -l // Lista todas as tags
+Lista todas as tags
+>git tag -l 
 
->git tag <conteúdo> // cria a tag localmente
+cria a tag localmente
+>git tag <conteúdo> 
 
->git push origin master --tags // Subir as tags para o repositório remoto, para gerar a release/versão
+Subir as tags para o repositório remoto, para gerar a release/versão
+>git push origin master --tags 
 
 ## Git Bare
 
->git init --bare // Repositório para hospedar os arquivos do repositório.
+Repositório para hospedar os arquivos do repositório.
+>git init --bare 
 
 ## Git hook : deploy automatizado
+
+## Em construção...

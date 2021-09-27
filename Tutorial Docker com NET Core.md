@@ -24,4 +24,4 @@ Executar o seguinte comando no terminal
 > docker build -t counter-image -f Dockerfile .
 
 
-## Em construção
+## Em construção...

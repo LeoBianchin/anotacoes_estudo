@@ -204,5 +204,4 @@ A seguir está a lista de tarefas a serem desenvolvidas.
 * Criar um Client responsável por consumir os dados da API (*WeatherClient*)
 * Criar um controller ou alterar o gerado pelo .NET automaticamente que vai chamar o Client e retornar os dados -->
 
-
-
+## Em construção...
