@@ -2,15 +2,35 @@
 
 Comandos principais
 
-Executar container
+Criar um container a partir de uma imagem
 
 >docker container run :IMAGE:
+>>docker container run --name :NOME_DO_CONTAINER: :IMAGE: -atribuir um nome para o container
+
+Cria um container no modo *Daemon*
+>docker container run :IMAGE: -d
+
+Para poder executar o container e conseguir executar local é necessário utilizar o *port binding* para vincular as portas locais e as portas do container com a opção `-p`. Sempre a porta à esquerda é a porta local e a direita do container.
+
+>docker container run -d -p 8080:80 :IMAGE:
+
+Existem casos que serão necessários atribuir valores para variáveis de ambiente. Adicionar a opção `-e` para cada variável
+
+>docker container run -d -e :VAR_AMBIENTE:=:VALOR_VARIAVEL: :IMAGE:
+
+Remover um container
+
+>docker container rm :CONTAINER_ID:
+
+Forçar a remoção de um container
+
+>docker container rm -f :CONTAINER_ID:
 
 Baixar imagem do Docker Hub
 
 >docker image pull :IMAGE:
 
-O comando pull busca a imagem do **Docker registry** e salva no sistema. Nesse caso, o registro é o [Docker Hub](https://hub.docker.com)
+O comando pull busca a imagem do ***Docker registry*** e salva no sistema. Nesse caso, o registro é o [Docker Hub](https://hub.docker.com)
 
 Visualizar as imagens que estão salvas no sistema
 
@@ -18,11 +38,11 @@ Visualizar as imagens que estão salvas no sistema
 
 Executar um container com uma execução de um shell do Linux, permitindo executar alguns comandos como `ls -l` ou `uname -a` por exemplo.
 
-Visualizar os containeres em execução
+Exibe lista de conteineres, por padrão só exibe os que estiverem em execução
 
 >docker container ls
 
-Visualizar as instâncias de conteineres que foram criados
+Lista todos os conteineres
 
 >docker container ls -a
 
@@ -75,10 +95,11 @@ Após a criação do arquivo ***Dockerfile***, monte a imagem com o seguinte com
 
 >docker image build -t :NOME_IMAGEM:VERSAO: .
 
-
+---
+# Troubleshoot
 
 ---
-Terminologia
+## Terminologia
 
 *Docker daemon*: O serviço que executa no background no host que gerencia a construção, execução e distribuição dos conteineres.
 
@@ -89,4 +110,10 @@ Terminologia
 *Containers*: Execução de instâncias de imagens Docker.
 
 ---
+
+## Referências
+
+[Docker docs](https://docs.docker.com/reference/) 
+---
+
 ## Em construção...
